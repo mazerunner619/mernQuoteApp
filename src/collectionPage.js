@@ -26,7 +26,7 @@ function Quote() {
   useEffect(async () => {
     try{
     // const quotes = await axios.get('/disp');
-    const quotes = await axios.get('https://mernquoteappserver.herokuapp.com/');
+    const quotes = await axios.get('https://mernquoteappserver.herokuapp.com/disp');
     console.log('fetching...');
     console.log('data fetched : ',quotes.data);
     console.log('fetched...');
@@ -122,7 +122,7 @@ return (
 
 <hr style={{ color : "green"}}/>
 
-   {quotes.slice(0).reverse().map((quot => 
+   {quotes.map((quot => 
     <div className="cards">
           <Card className="quoteCard" >
           <Card.Img className="card-img" src="https://fsb.zobj.net/crop.php?r=D4sr-PS5vNxOUQ9J63U4miy8wsc1D9TivO7azZGAyABpmHn1g-qZyBjOhJ_oz7WrHqo0bpDXflxQkHZpkEoHQjbSycHy5mNqqCLNb8QnTy49VllypyZLrriIS7DDpbr-auU50QY2xng7Zfqn" alt="quote-image" width="100%" height="100%"  />
