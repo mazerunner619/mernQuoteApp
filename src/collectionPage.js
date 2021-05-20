@@ -25,7 +25,8 @@ function Quote() {
 
   useEffect(async () => {
     try{
-    const quotes = await axios.get('/disp');
+    // const quotes = await axios.get('/disp');
+    const quotes = await axios.get('https://mernquoteappserver.herokuapp.com/');
     console.log('fetching...');
     console.log('data fetched : ',quotes.data);
     console.log('fetched...');
@@ -163,4 +164,3 @@ return (
 }
 
 export default Quote;
-
