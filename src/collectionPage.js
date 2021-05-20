@@ -63,13 +63,40 @@ if(quote.quote && quote.author){
 
   setBgd("https://source.unsplash.com/random/cartoon");
   e.preventDefault();
-  axios.post('/post', {quote : pos, author : quote.author });
+  axios.post('https://mernquoteappserver.herokuapp.com/post', {quote : pos, author : quote.author });
   setQuote({
     quote : "",
     author : "",
   });
   }
 }
+
+
+const quotesArray = quotes.slice(0).reverse().map((quot => 
+  <div className="cards">
+        <Card className="quoteCard" >
+        <Card.Img className="card-img" src="https://fsb.zobj.net/crop.php?r=D4sr-PS5vNxOUQ9J63U4miy8wsc1D9TivO7azZGAyABpmHn1g-qZyBjOhJ_oz7WrHqo0bpDXflxQkHZpkEoHQjbSycHy5mNqqCLNb8QnTy49VllypyZLrriIS7DDpbr-auU50QY2xng7Zfqn" alt="quote-image" width="100%" height="100%"  />
+    <Card.ImgOverlay>
+    <Card.Body className="card-body" >
+
+    <blockquote className="blockquote mb-0">
+      <p>
+      {quot.quote}
+      </p> 
+
+      <footer className="blockquote-footer" >
+      <cite title="Source Title" >{quot.author}</cite>
+    </footer>
+
+    </blockquote>
+
+    </Card.Body>
+
+  
+    </Card.ImgOverlay>
+    </Card>
+    </div>)
+    );
 
 
 return (
@@ -122,7 +149,7 @@ return (
 
 <hr style={{ color : "green"}}/>
 
-   {quotes.map((quot => 
+   {/* {quotes.slice(0).reverse().map((quot => 
     <div className="cards">
           <Card className="quoteCard" >
           <Card.Img className="card-img" src="https://fsb.zobj.net/crop.php?r=D4sr-PS5vNxOUQ9J63U4miy8wsc1D9TivO7azZGAyABpmHn1g-qZyBjOhJ_oz7WrHqo0bpDXflxQkHZpkEoHQjbSycHy5mNqqCLNb8QnTy49VllypyZLrriIS7DDpbr-auU50QY2xng7Zfqn" alt="quote-image" width="100%" height="100%"  />
@@ -146,10 +173,9 @@ return (
       </Card.ImgOverlay>
       </Card>
       </div>)
-      )}
-      {/* dislike icon */}
+      )} */}
 
-  
+      {quotesArray}
 
 <footer className="bg-dark text-center text-white">
  
