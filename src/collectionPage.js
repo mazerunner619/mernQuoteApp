@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios';
-import {Button,Accordion, Form, Card, Container,Nav, Navbar} from 'react-bootstrap';
+import {Button,Accordion,Carousel, Form, Card, Container,Nav, Navbar} from 'react-bootstrap';
 import { SiInstagram } from "react-icons/si";
+import {FaArrowAltCircleUp} from "react-icons/fa";
 
 
 //NXEBIkMsXHd74lW-HBHAOzj-ARwQY87vHKVujiRvARg => unsplash access key
@@ -71,7 +72,6 @@ if(quote.quote && quote.author){
   }
 }
 
-
 const quotesArray = quotes.slice(0).reverse().map((quot => 
   <div className="cards">
         <Card className="quoteCard" >
@@ -110,6 +110,79 @@ return (
 
 </Navbar>
 
+
+<Carousel fade className="carousel-main" nextLabel="" prevLabel="" nextIcon="" prevIcon="">
+
+  {quotes.slice(0).reverse().map((quot => 
+<Carousel.Item interval={4000}>
+  <div className="cards">
+        <Card className="carousel-card" >
+        <Card.Img className="carousel-img" src="https://fsb.zobj.net/crop.php?r=D4sr-PS5vNxOUQ9J63U4miy8wsc1D9TivO7azZGAyABpmHn1g-qZyBjOhJ_oz7WrHqo0bpDXflxQkHZpkEoHQjbSycHy5mNqqCLNb8QnTy49VllypyZLrriIS7DDpbr-auU50QY2xng7Zfqn" alt="quote-image" width="100%" height="100%"  />
+    <Card.ImgOverlay>
+    <Card.Body className="card-body" >
+
+    <blockquote className="blockquote mb-0">
+      <p>
+      {quot.quote}
+      </p> 
+
+      <footer className="blockquote-footer" >
+      <cite title="Source Title" >{quot.author}</cite>
+    </footer>
+
+    </blockquote>
+
+    </Card.Body>
+
+  
+    </Card.ImgOverlay>
+    </Card>
+    </div>
+    </Carousel.Item>)
+    )}
+
+  
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://source.unsplash.com/random/flower"
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+
+
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://source.unsplash.com/random/cartoon"
+      alt="Second slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://source.unsplash.com/random/anime"
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+
+
+
 <Accordion style = {{background : "green"}} >
   <Card className = "accor-card">
   <Card.Header>
@@ -141,6 +214,8 @@ return (
       </Card>
  
 </Accordion>
+
+
 
 <hr style={{color : "green"}}/>
 <blockquote className="blockquote mb-1" style={{textAlign : "center",padding :'0%', color : "green", fontSize : "150"} } >
@@ -177,10 +252,11 @@ return (
 
       {quotesArray}
 
+<a href="#top" style={{ textDecoration: "none", color : 'black', marginLeft : "45%", fontSize : "20px"}}>top<FaArrowAltCircleUp /></a>
 <footer className="bg-dark text-center text-white">
  
   <div className="footer">
-    © 2021 Copyright@ {' '}<a href="https://www.instagram.com/happiest_depressed_1/" style={{color : 'white'}}>happiest_depressed_1 <SiInstagram /> </a>
+    © 2021 @Copyright{'  '}<a href="https://www.instagram.com/happiest_depressed_1/" style={{color : 'white', fontSize : "20px"}}>{' '}{' '}<SiInstagram /> </a>
   </div>
 </footer>
 
