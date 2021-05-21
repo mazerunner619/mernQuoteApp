@@ -117,7 +117,7 @@ return (
 <Carousel.Item interval={4000}>
   <div className="cards">
         <Card className="carousel-card" >
-        <Card.Img className="carousel-img" src="https://fsb.zobj.net/crop.php?r=D4sr-PS5vNxOUQ9J63U4miy8wsc1D9TivO7azZGAyABpmHn1g-qZyBjOhJ_oz7WrHqo0bpDXflxQkHZpkEoHQjbSycHy5mNqqCLNb8QnTy49VllypyZLrriIS7DDpbr-auU50QY2xng7Zfqn" alt="quote-image" width="100%" height="100%"  />
+        <Card.Img className="carousel-img" src="https://source.unsplash.com/random/flower" alt="quote-image" width="100%" height="100%"  />
     <Card.ImgOverlay>
     <Card.Body className="card-body" >
 
@@ -140,7 +140,7 @@ return (
     </div>
     </Carousel.Item>)
     )}
-    
+
 </Carousel>
 
 
